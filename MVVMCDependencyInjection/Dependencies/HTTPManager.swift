@@ -20,4 +20,3 @@ class HTTPManager: HTTPManagerProtocol {
         }
     }
 }
-

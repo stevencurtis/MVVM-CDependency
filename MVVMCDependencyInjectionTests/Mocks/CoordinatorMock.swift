@@ -9,12 +9,12 @@
 import UIKit
 @testable import MVVMCDependencyInjection
 
-class CoordinatorMock: Coordinator {
-    func start(_ navigationController: UINavigationController) {
+class CoordinatorMock: ProjectCoordinator {
+    override func start(_ navigationController: UINavigationController) {
         //
     }
     
-    func moveToDetail() {
+    override func moveToDetail() {
         //
     }
     

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-// conforms to AnyObject to ensure concrete coordinators are always classes
-protocol Coordinator: class {
+
+protocol RootCoordinator: class {
     func start(_ navigationController: UINavigationController)
     func moveToDetail()
 }

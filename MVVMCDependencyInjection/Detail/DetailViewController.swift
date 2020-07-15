@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    weak var coordinator: Coordinator?
+    weak var coordinator: RootCoordinator?
     private var factory: Factory?
 
     var detailView: DetailView?
@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         return factory?.makeDetailViewModel(coordinator: coordinator!)
     }()
     
-    init(factory: Factory, coordinator: Coordinator) {
+    init(factory: Factory, coordinator: RootCoordinator) {
         self.factory = factory
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
@@ -29,13 +29,9 @@ class DetailViewController: UIViewController {
     }
     
     override func loadView() {
-        if let detailView = factory?.makeDetailView(viewModel: viewModel!) {
+        if let detailView = factory?.makeDetailView() {
             self.detailView = detailView
             self.view = detailView
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }

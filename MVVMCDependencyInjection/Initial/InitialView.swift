@@ -9,7 +9,6 @@
 import UIKit
 
 final class InitialView: UIView {
-
     let traverseButton = UIButton(type: .custom)
     let networkButton = UIButton(type: .custom)
     let networkLabel = UILabel()
@@ -31,8 +30,10 @@ final class InitialView: UIView {
                 
         self.addSubview(traverseButton)
         traverseButton.translatesAutoresizingMaskIntoConstraints = false
-        traverseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        traverseButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+        traverseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        traverseButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
         
         networkButton.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         networkButton.setTitle("Make Network Call", for: .normal)
@@ -41,8 +42,10 @@ final class InitialView: UIView {
         
         self.addSubview(networkButton)
         networkButton.translatesAutoresizingMaskIntoConstraints = false
-        networkButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        networkButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            networkButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            networkButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 100)
+        ])
         
         networkLabel.text = "No network calls made"
         networkLabel.backgroundColor = .purple
@@ -58,5 +61,4 @@ final class InitialView: UIView {
     func setNetworkLabel(text: String){
         networkLabel.text = text
     }
-
 }

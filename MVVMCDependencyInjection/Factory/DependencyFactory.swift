@@ -10,38 +10,40 @@ import Foundation
 
 protocol Factory {
     var networkManager: HTTPManagerProtocol { get }
-    func makeInitialViewModel(coordinator: Coordinator) -> InitialViewModel
-    func makeInitialView(viewModel: InitialViewModel) -> InitialView
-    func makeDetailView(viewModel: DetailViewModel) -> DetailView
-    func makeDetailViewModel(coordinator: Coordinator) -> DetailViewModel
+    func makeInitialViewController(coordinator: ProjectCoordinator) -> InitialViewController
+    func makeInitialViewModel(coordinator: RootCoordinator) -> InitialViewModel
+    func makeDetailView() -> DetailView
+    func makeDetailViewModel(coordinator: RootCoordinator) -> DetailViewModel
 }
 
 // replace the DependencyContainer for tests
 class DependencyFactory: Factory {
+    func makeInitialViewController(coordinator: ProjectCoordinator) -> InitialViewController {
+        let viewModel = makeInitialViewModel(coordinator: coordinator)
+        let initialViewController = InitialViewController(coordinator: coordinator, viewModel: viewModel)
+        return initialViewController
+    }
+    
     var networkManager: HTTPManagerProtocol = HTTPManager()
     
-    // should not return an optional at the end of this project
     func makeInitialCoordinator() -> ProjectCoordinator {
         let coordinator = ProjectCoordinator(factory: self)
         return coordinator
     }
     
-    func makeInitialView(viewModel: InitialViewModel) -> InitialView {
-        let view = InitialView()
-        return view
-    }
-    
-    func makeInitialViewModel(coordinator: Coordinator) -> InitialViewModel {
+    func makeInitialViewModel(coordinator: RootCoordinator) -> InitialViewModel {
         let viewModel = InitialViewModel(coordinator: coordinator, networkManager: networkManager)
         return viewModel
     }
-    
-    func makeDetailView(viewModel: DetailViewModel) -> DetailView {
+}
+
+extension DependencyFactory {
+    func makeDetailView() -> DetailView {
         let view = DetailView()
         return view
     }
     
-    func makeDetailViewModel(coordinator: Coordinator) -> DetailViewModel {
+    func makeDetailViewModel(coordinator: RootCoordinator) -> DetailViewModel {
         let viewModel = DetailViewModel(coordinator: coordinator, networkManager: networkManager)
         return viewModel
     }

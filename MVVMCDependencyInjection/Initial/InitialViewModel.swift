@@ -8,9 +8,9 @@
 
 import Foundation
 
-class InitialViewModel {
+final class InitialViewModel {
     private var networkManager: HTTPManagerProtocol?
-    init(coordinator: Coordinator?, networkManager: HTTPManagerProtocol) {
+    init(coordinator: RootCoordinator?, networkManager: HTTPManagerProtocol) {
         self.networkManager = networkManager
     }
     
@@ -18,8 +18,8 @@ class InitialViewModel {
         networkManager?.get(url: URL(string: "NOURL")!, completionBlock: { result in
             DispatchQueue.main.async {
                 switch result {
-                case .failure:
-                    completion(.failure(NSError()))
+                case .failure(let error):
+                    completion(.failure(error))
                 case .success(let data):
                     if let str = String(data: data, encoding: .utf8) {
                         let model = InitialModel(dataString: str)

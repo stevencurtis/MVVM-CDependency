@@ -10,7 +10,7 @@ import Foundation
 
 class DetailViewModel {
     private var networkManager: HTTPManagerProtocol?
-    init(coordinator: Coordinator?, networkManager: HTTPManagerProtocol) {
+    init(coordinator: RootCoordinator?, networkManager: HTTPManagerProtocol) {
         self.networkManager = networkManager
     }
 }

@@ -25,6 +25,8 @@
 		CA93E82C2488FB47009BBBF7 /* FactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA93E82B2488FB47009BBBF7 /* FactoryTests.swift */; };
 		CA93E830248900F0009BBBF7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA93E82F248900F0009BBBF7 /* DetailViewModel.swift */; };
 		CA93E83224890127009BBBF7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA93E83124890127009BBBF7 /* DetailView.swift */; };
+		CAAFC0C224939E510046CAA2 /* AbstractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFC0C124939E510046CAA2 /* AbstractCoordinator.swift */; };
+		CAAFC1022493C7190046CAA2 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFC1012493C7190046CAA2 /* RootCoordinator.swift */; };
 		CAB809EF2487B88F008CA1F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB809EE2487B88F008CA1F2 /* AppDelegate.swift */; };
 		CAB809F12487B88F008CA1F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB809F02487B88F008CA1F2 /* SceneDelegate.swift */; };
 		CAB809F32487B88F008CA1F2 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB809F22487B88F008CA1F2 /* InitialViewController.swift */; };
@@ -33,7 +35,6 @@
 		CAB80A062487B892008CA1F2 /* MVVMCDependencyInjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB80A052487B892008CA1F2 /* MVVMCDependencyInjectionTests.swift */; };
 		CAB80A112487B892008CA1F2 /* MVVMCDependencyInjectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB80A102487B892008CA1F2 /* MVVMCDependencyInjectionUITests.swift */; };
 		CAB80A1F2487CAB5008CA1F2 /* ProjectCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB80A1E2487CAB5008CA1F2 /* ProjectCoordinator.swift */; };
-		CAB80A222487CAC7008CA1F2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB80A212487CAC7008CA1F2 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		CA93E82B2488FB47009BBBF7 /* FactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryTests.swift; sourceTree = "<group>"; };
 		CA93E82F248900F0009BBBF7 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CA93E83124890127009BBBF7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CAAFC0C124939E510046CAA2 /* AbstractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCoordinator.swift; sourceTree = "<group>"; };
+		CAAFC1012493C7190046CAA2 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		CAB809EB2487B88F008CA1F2 /* MVVMCDependencyInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCDependencyInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB809EE2487B88F008CA1F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB809F02487B88F008CA1F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 		CAB80A102487B892008CA1F2 /* MVVMCDependencyInjectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCDependencyInjectionUITests.swift; sourceTree = "<group>"; };
 		CAB80A122487B892008CA1F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB80A1E2487CAB5008CA1F2 /* ProjectCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCoordinator.swift; sourceTree = "<group>"; };
-		CAB80A212487CAC7008CA1F2 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB80A1E2487CAB5008CA1F2 /* ProjectCoordinator.swift */,
+				CAAFC0C124939E510046CAA2 /* AbstractCoordinator.swift */,
 				CAB80A232487CACE008CA1F2 /* Protocol */,
 			);
 			path = Coordinator;
@@ -236,7 +239,7 @@
 		CAB80A232487CACE008CA1F2 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CAB80A212487CAC7008CA1F2 /* Coordinator.swift */,
+				CAAFC1012493C7190046CAA2 /* RootCoordinator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -376,13 +379,14 @@
 				CA3E9EB82487D1DC005EB82E /* InitialView.swift in Sources */,
 				CAB809EF2487B88F008CA1F2 /* AppDelegate.swift in Sources */,
 				CA3E9EC52487FB20005EB82E /* InitialModel.swift in Sources */,
-				CAB80A222487CAC7008CA1F2 /* Coordinator.swift in Sources */,
 				CAB80A1F2487CAB5008CA1F2 /* ProjectCoordinator.swift in Sources */,
+				CAAFC1022493C7190046CAA2 /* RootCoordinator.swift in Sources */,
 				CA93E83224890127009BBBF7 /* DetailView.swift in Sources */,
 				CA93E830248900F0009BBBF7 /* DetailViewModel.swift in Sources */,
 				CAB809F12487B88F008CA1F2 /* SceneDelegate.swift in Sources */,
 				CA3E9EB62487D0F6005EB82E /* DetailViewController.swift in Sources */,
 				CA3E9EBF2487ED82005EB82E /* DependencyFactory.swift in Sources */,
+				CAAFC0C224939E510046CAA2 /* AbstractCoordinator.swift in Sources */,
 				CA3E9EBC2487E1A3005EB82E /* HTTPManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,7 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.studeapps.MVVMCDependencyInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,7 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.studeapps.MVVMCDependencyInjection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
